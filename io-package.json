@@ -1,0 +1,290 @@
+{
+  "common": {
+    "name": "omnicomm-lls",
+    "version": "0.0.7",
+    "news": {
+      "0.0.6": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
+    },
+    "title": "Get data omnicomm fuel sensors",
+    "titleLang": {
+      "en": "Get data omnicomm fuel sensors",
+      "de": "Holen Sie sich Daten omnicomm Kraftstoffsensoren",
+      "ru": "Получить данные датчиков топлива omnicomm",
+      "pt": "Obter sensores de combustível omnicomm de dados",
+      "nl": "Verkrijg data omnicomm brandstofsensoren",
+      "fr": "Obtenir des données de capteurs de carburant omnicomm",
+      "it": "Ottieni dati sui sensori di carburante omnicomm",
+      "es": "Obtenga sensores de combustible omnicomm de datos",
+      "pl": "Uzyskaj dane omnicomm czujników paliwa",
+      "zh-cn": "获取数据全向燃油传感器"
+    },
+    "desc": {
+      "en": "Get data omnicomm fuel sensors",
+      "de": "Holen Sie sich Daten omnicomm Kraftstoffsensoren",
+      "ru": "Получить данные датчиков топлива omnicomm",
+      "pt": "Obter sensores de combustível omnicomm de dados",
+      "nl": "Verkrijg data omnicomm brandstofsensoren",
+      "fr": "Obtenir des données de capteurs de carburant omnicomm",
+      "it": "Ottieni dati sui sensori di carburante omnicomm",
+      "es": "Obtenga sensores de combustible omnicomm de datos",
+      "pl": "Uzyskaj dane omnicomm czujników paliwa",
+      "zh-cn": "获取数据全向燃油传感器"
+    },
+    "authors": [
+      "instalator <vvvalt@mail.ru>"
+    ],
+    "keywords": [
+      "iobroker",
+      "omnicomm",
+      "sensors"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "omnicomm-lls.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/instalator/ioBroker.omnicomm-lls/master/admin/omnicomm-lls.png",
+    "readme": "https://github.com/instalator/ioBroker.omnicomm-lls/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "metering",
+    "messagebox": true,
+    "compact": true,
+    "materialize": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ]
+  },
+  "native": {
+    "usbport": "",
+    "baud": 19200,
+    "address": 1,
+    "minlevel": 0,
+    "maxlevel": 4095,
+    "filtering": "",
+    "pollTime": 5000
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "temperature",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Temperature",
+        "type": "number",
+        "unit": "°C",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "relative_level",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Relative level",
+        "type": "number",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "frequency_value",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "Frequency value",
+        "type": "number",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "level",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "level",
+        "type": "number",
+        "unit": "L",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "model",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "model",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "version",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "version",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "mode",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "mode",
+        "type": "string",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "onPeriodData",
+      "type": "state",
+      "common": {
+        "role": "button",
+        "name": "onPeriodData",
+        "type": "boolean",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "interval",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "interval",
+        "type": "string",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "filter",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "filter",
+        "type": "string",
+        "read": true,
+        "write": true,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "min",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "min",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "max",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "max",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CNT1",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "CNT1",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "CNT2",
+      "type": "state",
+      "common": {
+        "role": "state",
+        "name": "CNT2",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}

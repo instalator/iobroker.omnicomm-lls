@@ -1,0 +1,100 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../css/adapter.css"/>
+    <link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
+    <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../../js/translate.js"></script>
+    <script type="text/javascript" src="../../lib/js/materialize.js"></script>
+    <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="words.js"></script>
+    <script type="text/javascript" src="admin.js"></script>
+    <script>
+        $(function (){
+            $('.adapter-body').append('' +
+                '<div class="m row" style=\'display:block;position:absolute;bottom:130px;right:0;\'>' +
+                '<div class="col right">' +
+                '<div class="col" style="margin-top:10px;float:right;margin-right:20px;">' +
+                '<a target="_blank" href="https://sobe.ru/na/instalator"><img style="float:right;" src="https://img.shields.io/badge/Donate-YooMoney-green" alt=""></a>' +
+                '<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PFUALWTR2CTPY"><img style="float:right;padding-right:10px;" src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt=""></a>' +
+                '</div></div></div>');
+        });
+    </script>
+    <style>
+        .adapter-body {
+            display: block;
+        }
+
+        .m .input-field > label {
+            color: #5a5a5a;
+        }
+
+        .adapter-body::after {
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            content: "";
+            background: url(background.jpg);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.2;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="m adapter-container">
+    <div class="row">
+        <div class="col s12 m4 l2">
+            <img src="logo_admin.png" class="brand-logo" height="100px" alt="Omnicomm LLS adapter">
+        </div>
+    </div>
+    <div class="row col m12">
+        <div class="input-field col s2 m2 l2">
+            <input id="usbport" type="text" class="value validate" list="serial-list" autocomplete="on"/>
+            <label for="usbport" class="translate">usbport</label>
+            <datalist id="serial-list">
+                <!--dinamic list-->
+            </datalist>
+        </div>
+        <div class="input-field col s2">
+            <select id="baud" class="value">
+                <option value="1200">1200</option>
+                <option value="2400">2400</option>
+                <option value="4800">4800</option>
+                <option value="9600">9600</option>
+                <option value="19200">19200</option>
+                <option value="38400">38400</option>
+                <option value="57600">57600</option>
+                <option value="115200">115200</option>
+            </select>
+            <label class="translate">baud</label>
+        </div>
+        <div class="input-field col s2 m2 l2">
+            <input id="address" type="number" class="value"><label for="address" class="translate">address</label>
+        </div>
+    </div>
+    <div class="row col m12">
+        <div class="input-field col s2 m2 l2">
+            <input id="pollTime" type="number" class="value"><label for="pollTime" class="translate">pollTime</label>
+        </div>
+    </div>
+
+    <!--<div class="row col m12">
+        <div class="input-field col s2 m2 l2">
+            <input id="minlevel" type="number" class="value"><label for="minlevel" class="translate">minlevel</label>
+        </div>
+        <div class="input-field col s2 m2 l2">
+            <input id="maxlevel" type="number" class="value"><label for="maxlevel" class="translate">maxlevel</label>
+        </div>
+    </div>-->
+
+
+</div>
+</body>
+</html>
